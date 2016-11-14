@@ -1,0 +1,32 @@
+server:
+  requestLog:
+    appenders: []
+  applicationConnectors:
+    - type: http
+      port: 8080
+
+
+database:
+  driverClass: org.h2.Driver
+  url: jdbc:h2:~/coding
+  user: anyone
+  password: strongPassword
+  properties:
+    charSet: UTF-8
+    validationQuery: "/* MyService Health Check */ SELECT 1"
+    validationQueryTimeout: 5s
+
+
+logging:
+
+  level: DEBUG
+  loggers:
+      org.apache: INFO
+      org.eclipse: INFO
+      com.amazonaws: INFO
+      com.gargoylesoftware: ERROR
+      io.dropwizard: INFO
+      facebook4j: INFO
+      freemarker.cache: INFO
+      freemarker.beans: INFO
+      org.hibernate: INFO
